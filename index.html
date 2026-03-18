@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Início - NIGHTFALL LEGION</title><link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ranking.css"><style>
+#ranking-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1002;
+}
+
+#ranking-btn img {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.5s, opacity 0.5s;
+    animation: floatGlow 2s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+    0%, 100% { transform: translateY(0px); filter: drop-shadow(0 0 5px #4da6ff); }
+    50% { transform: translateY(-5px); filter: drop-shadow(0 0 15px #1a8cff); }
+}
+
+#ranking-btn.hide img {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+#ranking-sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background: #1e1e2f;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.5);
+    transition: left 0.3s;
+    z-index: 1001;
+}
+
+.ranking-section h4 {
+    cursor: pointer;
+    background: #33334d;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin: 10px 0 5px 0;
+    transition: background 0.3s;
+}
+
+.ranking-section h4:hover {
+    background: #4da6ff;
+    color: #000;
+}
+
+.ranking-list {
+    list-style: none;
+    padding-left: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.close-ranking {
+    background: #ff5555;
+    border: none;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+</style></head><body><div class="container"><header>
+    <h1>NIGHTFALL LEGION</h1>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="artefatos.html">Artefatos</a>
+        <a href="combinacoes.html">Combinações</a>
+    </nav>
+</header><section>
+    <h3>Bem-vindo</h3>
+    <p>Explore o guia completo de NIGHTFALL LEGION!</p>
+</section><section id="features">
+    <h3>Combinações</h3>
+    <ul>
+        <li>Combinação de heróis</li>
+        <li>Estratégias poderosas</li>
+        <li>Formações de equipe</li>
+    </ul>
+</section><section id="about">
+    <h3>Artefatos</h3>
+    <p>Explore os artefatos mágicos e itens especiais que aumentam o poder dos heróis.</p>
+</section><section class="social">
+    <h3 style="text-align:center;">Participe da maior aliança do Brasil</h3>
+    <div class="social-icons" style="justify-content:center;">
+        <a href="#"><img src="img/discord.png"></a>
+        <a href="#"><img src="img/instagram.png"></a>
+        <a href="#"><img src="img/facebook.png"></a>
+        <a href="#"><img src="img/telegram.png"></a>
+        <a href="#"><img src="img/whatsapp.png"></a>
+    </div>
+</section><!-- LOGIN DISCORD CORRIGIDO --><a href="https://discord.com/oauth2/authorize?client_id=1483665165886160916&response_type=token&redirect_uri=https://mapleagnt.github.io/nightfalllegion/callback.html&scope=identify" class="login-discord">
+Entrar com Discord
+</a><footer>
+    <p>© 2026 NIGHTFALL LEGION</p>
+</footer></div><!-- BOTÃO COROA --><div id="ranking-btn">
+    <img src="img/corona.png">
+</div><!-- SIDEBAR RANKING --><div id="ranking-sidebar">
+    <button class="close-ranking">Fechar</button>
+    <h3>Rankings</h3><!-- TODOS OS RANKINGS MANTIDOS -->
+<div class="ranking-section">
+    <h4 onclick="toggleList('poder')">Ranking de Poder</h4>
+    <ul class="ranking-list" id="poder">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+        <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+        <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
+        <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
+        <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
+        <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+    </ul>
+</div>
+
+<div class="ranking-section">
+    <h4 onclick="toggleList('personagem')">Ranking de Personagem</h4>
+    <ul class="ranking-list" id="personagem">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+        <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+        <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
+        <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
+        <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
+        <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+    </ul>
+</div>
+
+<div class="ranking-section">
+    <h4 onclick="toggleList('combinacao')">Ranking de Combinação</h4>
+    <ul class="ranking-list" id="combinacao">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+        <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+        <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
+        <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
+        <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
+        <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+    </ul>
+</div>
+
+<div class="ranking-section">
+    <h4 onclick="toggleList('recurso')">Ranking de Recurso</h4>
+    <ul class="ranking-list" id="recurso">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+        <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+        <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
+        <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
+        <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
+        <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+    </ul>
+</div>
+
+<div class="ranking-section">
+    <h4 onclick="toggleList('meritos')">Ranking de Méritos</h4>
+    <ul class="ranking-list" id="meritos">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+        <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+        <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
+        <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
+        <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
+        <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+    </ul>
+</div>
+
+</div><script>
+// COROA + SIDEBAR
+const rankingBtn = document.getElementById('ranking-btn');
+const sidebar = document.getElementById('ranking-sidebar');
+const closeBtn = document.querySelector('.close-ranking');
+
+rankingBtn.addEventListener('click', () => {
+    rankingBtn.classList.add('hide');
+    setTimeout(() => sidebar.style.left = '0px', 300);
+});
+
+closeBtn.addEventListener('click', () => {
+    sidebar.style.left = '-300px';
+    setTimeout(() => rankingBtn.classList.remove('hide'), 300);
+});
+
+// TOGGLE LISTA
+function toggleList(id) {
+    const list = document.getElementById(id);
+    if (list.style.maxHeight) {
+        list.style.maxHeight = null;
+    } else {
+        list.style.maxHeight = list.scrollHeight + "px";
+    }
+}
+
+// LOGIN DISCORD
+const token = localStorage.getItem("discord_token");
+
+if(token){
+    fetch("https://discord.com/api/users/@me", {
+        headers: { Authorization: "Bearer " + token }
+    })
+    .then(res => res.json())
+    .then(user => {
+        const nome = document.createElement("p");
+        nome.innerText = "Logado como: " + user.username;
+        document.body.appendChild(nome);
+    });
+}
+</script></body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+
+<h2>Processando login...</h2>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+
+if (code) {
+    localStorage.setItem("logado", "true");
+
+    document.body.innerHTML = "<h2>Login realizado com sucesso!</h2>";
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1500);
+} else {
+    document.body.innerHTML = "<h2>Erro no login</h2>";
+}
+</script>
+
+</body>
+</html>
