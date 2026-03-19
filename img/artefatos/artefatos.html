@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Artefatos - NIGHTFALL LEGION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>NIGHTFALL LEGION</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="artefatos.html" class="active">Artefatos</a>
+        <a href="combinacoes.html">Combinações</a>
+    </nav>
+</header>
+
+<section>
+    <h3>Artefatos</h3>
+    <p>Explore os artefatos mágicos e itens especiais que aumentam o poder dos heróis.</p>
+
+    <div class="artefatos-grid">
+        <div class="artefato-card">
+            <img src="img/artefatos/espada.jpg" alt="Espada Lendária">
+            <h4>Espada Lendária</h4>
+        </div>
+        <div class="artefato-card">
+            <img src="img/artefatos/escudo.jpg" alt="Escudo Protetor">
+            <h4>Escudo Protetor</h4>
+        </div>
+        <!-- mais artefatos -->
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 NIGHTFALL LEGION</p>
+</footer>
+
+<script>
+const navLinks = document.querySelectorAll("nav a");
+const barra = document.createElement("div");
+barra.classList.add("active-bar");
+document.querySelector("nav").appendChild(barra);
+
+function moverBarra(link) {
+    const rect = link.getBoundingClientRect();
+    const navRect = link.parentElement.getBoundingClientRect();
+    barra.style.width = rect.width + "px";
+    barra.style.left = (rect.left - navRect.left) + "px";
+}
+
+navLinks.forEach(link => {
+    link.addEventListener("click", function(e){
+        navLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+        moverBarra(this);
+    });
+});
+
+// Inicializa na aba Artefatos
+moverBarra(navLinks[2]);
+</script>
+
+</div>
+</body>
+</html>
