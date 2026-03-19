@@ -33,9 +33,28 @@
         </ul>
     </section>
 
-    <section id="about">
+    <section id="artefatos">
         <h3>Artefatos</h3>
         <p>Explore os artefatos mágicos e itens especiais que aumentam o poder dos heróis.</p>
+
+        <div class="artefatos-grid">
+            <div class="artefato-card">
+                <img src="img/artefatos/artefato1.jpg" alt="Artefato 1">
+                <h4>Artefato 1</h4>
+            </div>
+            <div class="artefato-card">
+                <img src="img/artefatos/artefato2.jpg" alt="Artefato 2">
+                <h4>Artefato 2</h4>
+            </div>
+            <div class="artefato-card">
+                <img src="img/artefatos/artefato3.jpg" alt="Artefato 3">
+                <h4>Artefato 3</h4>
+            </div>
+            <div class="artefato-card">
+                <img src="img/artefatos/artefato4.jpg" alt="Artefato 4">
+                <h4>Artefato 4</h4>
+            </div>
+        </div>
     </section>
 
     <!-- ALIANÇA / REDES SOCIAIS -->
@@ -76,64 +95,35 @@
     <div class="ranking-section">
         <h4 onclick="toggleList('poder')">Ranking de Poder</h4>
         <ul class="ranking-list" id="poder">
-            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-            <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
-            <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-            <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
-            <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+            <!-- 1 a 30 -->
         </ul>
     </div>
-
     <!-- Ranking de Personagem -->
     <div class="ranking-section">
         <h4 onclick="toggleList('personagem')">Ranking de Personagem</h4>
         <ul class="ranking-list" id="personagem">
-            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-            <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
-            <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-            <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
-            <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+            <!-- 1 a 30 -->
         </ul>
     </div>
-
     <!-- Ranking de Combinação -->
     <div class="ranking-section">
         <h4 onclick="toggleList('combinacao')">Ranking de Combinação</h4>
         <ul class="ranking-list" id="combinacao">
-            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-            <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
-            <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-            <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
-            <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+            <!-- 1 a 30 -->
         </ul>
     </div>
-
     <!-- Ranking de Recurso -->
     <div class="ranking-section">
         <h4 onclick="toggleList('recurso')">Ranking de Recurso</h4>
         <ul class="ranking-list" id="recurso">
-            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-            <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
-            <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-            <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
-            <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+            <!-- 1 a 30 -->
         </ul>
     </div>
-
     <!-- Ranking de Méritos -->
     <div class="ranking-section">
         <h4 onclick="toggleList('meritos')">Ranking de Méritos</h4>
         <ul class="ranking-list" id="meritos">
-            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-            <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
-            <li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-            <li>21</li><li>22</li><li>23</li><li>24</li><li>25</li>
-            <li>26</li><li>27</li><li>28</li><li>29</li><li>30</li>
+            <!-- 1 a 30 -->
         </ul>
     </div>
 </div>
@@ -156,11 +146,7 @@ closeBtn.addEventListener('click', () => {
 // TOGGLE LISTA
 function toggleList(id){
     const list = document.getElementById(id);
-    if(list.style.display === 'block'){
-        list.style.display = 'none';
-    } else {
-        list.style.display = 'block';
-    }
+    list.style.display = (list.style.display === 'block') ? 'none' : 'block';
 }
 
 // LOGIN DISCORD
@@ -181,8 +167,8 @@ if(token){
     });
 }
 </script>
-    
-    <!-- === Chat integrado === -->
+
+<!-- Chat integrado -->
 <div id="chat-wrapper">
   <div id="chat-container">
     <div id="messages"></div>
@@ -193,7 +179,6 @@ if(token){
   </div>
 </div>
 
-<!-- Script do chat -->
 <script src="script.js"></script>
 </body>
 </html>
