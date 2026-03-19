@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Artefatos - NIGHTFALL LEGION</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #12121e;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav a.active {
+            color: #4a90e2;
+        }
+
+        section h3 {
+            margin-top: 0;
+        }
+
+        .artefatos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .artefato-card {
+            background: #1e1e2f;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            width: 140px;      
+            height: 180px;     
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+
+        .artefato-card:hover {
+            transform: scale(1.05);
+        }
+
+        .artefato-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .artefato-card h4 {
+            margin-top: 8px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>NIGHTFALL LEGION</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="artefatos.html" class="active">Artefatos</a>
+        <a href="combinacoes.html">Combinações</a>
+    </nav>
+</header>
+
+<section>
+    <h3>Artefatos</h3>
+    <p>Aqui você poderá adicionar os artefatos do jogo. Basta colocar as imagens na pasta <code>img/artefatos/</code> e renomear para artefato1.jpg, artefato2.jpg, etc.</p>
+
+    <div class="artefatos-grid">
+        <div class="artefato-card">
+            <img src="img/artefatos/artefato1.jpg" alt="Artefato 1">
+            <h4>Artefato 1</h4>
+        </div>
+        <div class="artefato-card">
+            <img src="img/artefatos/artefato2.jpg" alt="Artefato 2">
+            <h4>Artefato 2</h4>
+        </div>
+        <div class="artefato-card">
+            <img src="img/artefatos/artefato3.jpg" alt="Artefato 3">
+            <h4>Artefato 3</h4>
+        </div>
+        <div class="artefato-card">
+            <img src="img/artefatos/artefato4.jpg" alt="Artefato 4">
+            <h4>Artefato 4</h4>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 NIGHTFALL LEGION</p>
+</footer>
+
+</div>
+</body>
+</html>
