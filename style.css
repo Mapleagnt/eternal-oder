@@ -1,3 +1,7 @@
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
 * {
     margin: 0;
     padding: 0;
@@ -170,100 +174,6 @@ button:hover {
     background: linear-gradient(to left, transparent, gold);
 }
 
-/* ===== TOP 3 ESTILO PÓDIO AJUSTADO ===== */
-.top3 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* alinhar pela base do pódio */
-    margin-bottom: 25px;
-    gap: 20px; /* espaçamento entre os cards */
-}
-
-/* CARD BASE */
-.card {
-    padding: 10px;
-    text-align: center;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* 1º LUGAR - central */
-.card:nth-child(1) {
-    border: 2px solid gold;
-    box-shadow: 0 0 25px gold;
-    background: rgba(255,215,0,0.25);
-    font-size: 20px;
-    width: 120px;
-    height: 160px; /* altura maior */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-}
-
-/* 2º LUGAR - esquerda */
-.card:nth-child(2) {
-    border: 2px solid silver;
-    box-shadow: 0 0 18px silver;
-    background: rgba(192,192,192,0.2);
-    font-size: 18px;
-    width: 100px;
-    height: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-
-/* 3º LUGAR - direita */
-.card:nth-child(3) {
-    border: 2px solid #cd7f32;
-    box-shadow: 0 0 18px #cd7f32;
-    background: rgba(205,127,50,0.2);
-    font-size: 18px;
-    width: 100px;
-    height: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-/* HOVER PARA TODOS OS CARDS */
-.card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(255,255,255,0.5);
-}
-
-/* TOP 10 */
-.top10 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.linha {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-.linha:hover {
-    background: rgba(255,255,255,0.1);
-}
-
-.linha:nth-child(1) { color: gold; }
-.linha:nth-child(2) { color: #ccc; }
-.linha:nth-child(3) { color: #cd7f32; }
-
 /* SPA */
 .pagina {
     display: none;
@@ -306,7 +216,7 @@ textarea {
     background: linear-gradient(#f5d76e, #caa43b);
 }
 
-/* SOCIAL COM IMAGEM */
+/* SOCIAL */
 .social-box {
     margin-top: 40px;
     height: 250px;
@@ -317,7 +227,6 @@ textarea {
     position: relative;
 }
 
-/* ESCURECER FUNDO */
 .social-overlay {
     width: 100%;
     height: 100%;
@@ -329,7 +238,6 @@ textarea {
     align-items: center;
 }
 
-/* TEXTO */
 .social-title {
     font-size: 26px;
     color: #6ec1ff;
@@ -339,7 +247,6 @@ textarea {
     margin-bottom: 25px;
 }
 
-/* ÍCONES */
 .social-icons {
     display: flex;
     gap: 20px;
@@ -355,4 +262,215 @@ textarea {
 .social-icons img:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* ===== HIERARQUIA ===== */
+.hierarquia {
+    margin-top: 30px;
+}
+
+.linha-topo {
+    display: flex;
+    justify-content: center;
+    gap: 35px; /* aumentei aqui */
+}
+
+.linha-baixo {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* aumentei aqui */
+    margin-top: 25px;
+}
+
+.cargo {
+    width: 130px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    color: #f5d76e;
+    font-weight: bold;
+}
+
+.cargo.lider {
+    transform: scale(1.15);
+    border: 1px solid gold;
+    box-shadow:
+        0 0 15px rgba(255,215,0,0.6),
+        0 0 30px rgba(255,215,0,0.3);
+}
+
+.cargo:hover {
+    transform: translateY(-5px);
+}
+
+.nome {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.cargo p {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+
+    .overlay h1 {
+        font-size: 32px;
+    }
+
+    .overlay p {
+        font-size: 14px;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button, .btn-azul {
+        width: 100%;
+    }
+
+    .box {
+        width: 95%;
+        margin-top: -50px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* 🔥 HIERARQUIA MANTIDA IGUAL */
+    .linha-topo {
+    gap: 15px; /* mais espaço no celular */
+}
+
+.linha-baixo {
+    gap: 30px;
+}
+
+    .cargo {
+        width: 110px;
+        padding: 13px;
+        font-size: 12px;
+    }
+
+    .cargo.lider {
+        transform: scale(1.1);
+    }
+
+    .nome {
+        font-size: 12px;
+    }
+
+    .cargo p {
+        font-size: 10px;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+@media (min-width: 900px) {
+    .box {
+        width: 70%;
+    }
+}
+/* ===== LAYOUT PC - TUDO EM UMA LINHA ===== */
+/* ===== AJUSTE FINO PC ===== */
+@media (min-width: 900px) {
+
+    .hierarquia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 35px; /* antes 60 → agora mais compacto */
+        margin-top: 40px;
+
+        flex-wrap: wrap; /* evita quebrar o layout */
+    }
+
+    .linha-topo,
+    .linha-baixo {
+        display: contents;
+    }
+
+    /* CARDS MAIORES (MAS CONTROLADOS) */
+    .cargo {
+        width: 180px;   /* maior que antes */
+        padding: 22px;
+    }
+
+    /* LÍDER DESTACADO */
+    .cargo.lider {
+        transform: scale(1.2);
+
+    /* LÍDER MAIS DESTACADO */
+    .cargo.lider {
+        transform: scale(1.25);
+    }
+
+}
+/* ===== CORREÇÃO HERO NO PC ===== */
+@media (min-width: 900px) {
+
+    .box {
+        margin-top: 20px; /* antes era negativo */
+    }
+
+    .hero {
+        height: 75vh; /* aumenta espaço do topo */
+    }
+
+}
+/* ===== ESPAÇO EXTRA NO PC ===== */
+@media (min-width: 900px) {
+
+    .box {
+        margin-top: 60px; /* antes tava menor → agora mais afastado */
+    }
+
+}
+/* ===== AJUSTE MOBILE FINAL ===== */
+@media (max-width: 768px) {
+
+    .hierarquia {
+        margin-top: 30px;
+    }
+
+    /* LINHA DE CIMA */
+    .linha-topo {
+        gap: 18px; /* um pouco mais espaço */
+    }
+
+    /* LINHA DE BAIXO */
+    .linha-baixo {
+        gap: 35px; /* leve aumento */
+        margin-top: 30px;
+    }
+
+    /* CARDS */
+   .cargo {
+    width: 140px; /* MAIS LARGO */
+    padding: 18px; /* um pouco mais confortável */
+}
+    
+    /* LÍDER */
+    .cargo.lider {
+        transform: scale(1.12); /* leve destaque */
+    }
+
 }

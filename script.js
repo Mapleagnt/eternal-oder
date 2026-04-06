@@ -1,71 +1,24 @@
 // ===== LINK DO JOGO =====
-// Troque aqui sempre que quiser mudar o link
-let linkJogo = "https://play.google.com/store/apps/details?id=com.farlightgames.callofdragons";
+let linkJogo = "https://play.google.com/store/apps/details?id=com.farlightgames.samo.gp";
 
 function abrirJogo() {
     window.open(linkJogo, "_blank");
 }
 
-// ===== DADOS INICIAIS =====
-let jogadores = [
-    { nome: "Player1", poder: 90000 },
-    { nome: "Player2", poder: 85000 },
-    { nome: "Player3", poder: 80000 },
-    { nome: "Player4", poder: 75000 },
-    { nome: "Player5", poder: 70000 },
-    { nome: "Player6", poder: 65000 },
-    { nome: "Player7", poder: 60000 },
-    { nome: "Player8", poder: 55000 },
-    { nome: "Player9", poder: 50000 },
-    { nome: "Player10", poder: 45000 }
-];
-
 // ===== TROCAR PÁGINA =====
 function trocarPagina(id) {
+
+    // troca conteúdo
     document.querySelectorAll(".pagina").forEach(p => p.classList.remove("ativa"));
     document.getElementById(id).classList.add("ativa");
 
+    // menu ativo
     document.querySelectorAll(".menu a").forEach(a => a.classList.remove("ativo"));
     event.target.classList.add("ativo");
 
-    // ===== Mostrar ou esconder social-box =====
+    // SOCIAL aparece só no início
     const social = document.querySelector(".social-box");
-    if(id === "inicio") {
-        social.style.display = "block";
-    } else {
-        social.style.display = "none";
-    }
-}
-
-// ===== ATUALIZAR RANKING =====
-function atualizarRanking() {
-    const top3 = document.getElementById("top3");
-    const top10 = document.getElementById("top10");
-
-    top3.innerHTML = "";
-    top10.innerHTML = "";
-
-    jogadores.sort((a, b) => b.poder - a.poder);
-
-    // TOP 3
-    jogadores.slice(0,3).forEach((j, i) => {
-        top3.innerHTML += `
-            <div class="card">
-                <h3>#${i+1} ${j.nome}</h3>
-                <p>${j.poder}</p>
-            </div>
-        `;
-    });
-
-    // TOP 10
-    jogadores.forEach((j, i) => {
-        top10.innerHTML += `
-            <div class="linha">
-                <span>#${i+1} ${j.nome}</span>
-                <span>${j.poder}</span>
-            </div>
-        `;
-    });
+    social.style.display = (id === "inicio") ? "block" : "none";
 }
 
 // ===== LOGIN =====
@@ -77,18 +30,25 @@ function login() {
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("painel").style.display = "block";
 
-        carregarRankingTexto();
+        carregarDados();
     } else {
         alert("Usuário ou senha incorretos!");
     }
 }
 
-// ===== CARREGAR TEXTO =====
-function carregarRankingTexto() {
-    let dados = localStorage.getItem("ranking");
+// ===== CARREGAR DADOS =====
+function carregarDados() {
+
+    let dados = localStorage.getItem("hierarquia");
 
     if (!dados) {
-        dados = JSON.stringify(jogadores, null, 2);
+        dados = JSON.stringify({
+            lider: "Nome do líder",
+            erudito: "Nome do jogador",
+            guerra: "Nome do jogador",
+            emissario: "Nome do jogador",
+            feras: "Nome do jogador"
+        }, null, 2);
     }
 
     document.getElementById("dadosRanking").value = dados;
@@ -99,29 +59,43 @@ function salvarRanking() {
     const texto = document.getElementById("dadosRanking").value;
 
     try {
-        const novoRanking = JSON.parse(texto);
+        const novo = JSON.parse(texto);
 
-        localStorage.setItem("ranking", texto);
+        localStorage.setItem("hierarquia", texto);
 
-        jogadores = novoRanking;
+        aplicarDados(novo);
 
-        atualizarRanking();
+        alert("Atualizado com sucesso!");
+        location.reload(); // recarrega e fecha admin
 
-        alert("Ranking atualizado com sucesso!");
     } catch (e) {
-        alert("Erro! Formato inválido.");
+        alert("Erro! JSON inválido.");
     }
 }
 
-// ===== INICIAR SITE =====
-window.onload = function() {
-    let dados = localStorage.getItem("ranking");
-    if (dados) {
-        jogadores = JSON.parse(dados);
-    }
-    atualizarRanking();
+// ===== APLICAR DADOS NA TELA =====
+function aplicarDados(dados) {
 
-    // Certifica que social-box aparece só no início
+    document.querySelectorAll(".cargo")[1].querySelector(".nome").innerText = dados.lider;
+    document.querySelectorAll(".cargo")[0].querySelector(".nome").innerText = dados.erudito;
+    document.querySelectorAll(".cargo")[2].querySelector(".nome").innerText = dados.guerra;
+    document.querySelectorAll(".cargo")[3].querySelector(".nome").innerText = dados.emissario;
+    document.querySelectorAll(".cargo")[4].querySelector(".nome").innerText = dados.feras;
+}
+
+// ===== INICIAR =====
+window.onload = function() {
+
+    // reset admin sempre
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("painel").style.display = "none";
+
     const social = document.querySelector(".social-box");
     social.style.display = "block";
+
+    let dados = localStorage.getItem("hierarquia");
+
+    if (dados) {
+        aplicarDados(JSON.parse(dados));
+    }
 };

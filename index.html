@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ETERNAL DRAGON</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FUNDO -->
+<div class="bg"></div>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="overlay">
+        <h1>ETERNAL DRAGON</h1>
+        <p>Domine o servidor. Torne-se um rei.</p>
+
+        <div class="botoes">
+            <!-- BOTÃO JOGUE AGORA -->
+            <button class="btn-ouro" onclick="abrirJogo()">Jogue Agora</button>
+            <!-- BOTÃO DISCORD -->
+            <a href="https://discord.gg/9UmsTnsNn" target="_blank" class="btn-azul">Entrar no Discord</a>
+        </div>
+
+        <span class="server">Servidor xxx</span>
+    </div>
+</header>
+
+<!-- CAIXA PRINCIPAL -->
+<section class="box">
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="#" onclick="trocarPagina('inicio')" class="ativo">Início</a>
+        <a href="#" onclick="trocarPagina('sobre')">Sobre</a>
+        <a href="#" onclick="trocarPagina('projetos')">Projetos</a>
+        <a href="#" onclick="trocarPagina('conquistas')">Conquistas</a>
+        <a href="#" onclick="trocarPagina('admin')">Admin</a>
+    </nav>
+
+    <div class="conteudo">
+
+        <!-- INÍCIO -->
+<div id="inicio" class="pagina ativa">
+    <h2>👑 Hierarquia da Aliança</h2>
+
+    <div class="hierarquia">
+
+        <!-- LINHA DE CIMA -->
+        <div class="linha-topo">
+
+            <div class="cargo">
+                <h3>Erudito</h3>
+                <span class="nome">Nome do jogador</span>
+                <p>Responsável por manter a ordem da aliança.</p>
+            </div>
+
+            <div class="cargo lider">
+                <h3>Líder</h3>
+                <span class="nome">Nome do líder</span>
+                <p>Comanda toda a aliança e toma decisões importantes.</p>
+            </div>
+
+            <div class="cargo">
+                <h3>Mestre da Guerra</h3>
+                <span class="nome">Nome do jogador</span>
+                <p>Responsável pelas batalhas e estratégias de ataque.</p>
+            </div>
+
+        </div>
+
+        <!-- LINHA DE BAIXO -->
+        <div class="linha-baixo">
+
+            <div class="cargo">
+                <h3>Emissário</h3>
+                <span class="nome">Nome do jogador</span>
+                <p>Cuida da diplomacia entre alianças.</p>
+            </div>
+
+            <div class="cargo">
+                <h3>Mestre das Feras</h3>
+                <span class="nome">Nome do jogador</span>
+                <p>Controla e lidera criaturas da aliança.</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+        <!-- PERSONAGENS -->
+        <div id="sobre" class="pagina">
+            <h2>Sobre</h2>
+            <p>Descricao sobre a alianca...</p>
+        </div>
+
+        <!-- ARTEFATOS -->
+        <div id="projetos" class="pagina">
+            <h2>Projetos</h2>
+            <p>projetos da nossa alianca...</p>
+        </div>
+
+        <!-- CONQUISTAS -->
+        <div id="conquistas" class="pagina">
+            <h2>Conquistas</h2>
+            <p>Histórico de vitórias...</p>
+        </div>
+
+        <!-- ADMIN
+        <div id="admin" class="pagina">
+            <h2>⚙️ Painel Admin</h2>
+
+            <!-- LOGIN 
+            <div id="loginBox">
+                <input type="text" id="user" placeholder="Usuário">
+                <input type="password" id="pass" placeholder="Senha">
+                <button onclick="login()">Entrar</button>
+            </div>
+
+            <!-- PAINEL 
+            <div id="painel" style="display:none;">
+                <h3>Editar Ranking</h3>
+                <textarea id="dadosRanking" rows="10" style="width:100%;"></textarea>
+                <button onclick="salvarRanking()">Salvar Ranking</button>
+            </div>
+        </div> -->
+
+        <!-- SOCIAL BOX -->
+        <div class="social-box">
+            <div class="social-overlay">
+                <h2 class="social-title">Participe da maior aliança do Brasil</h2>
+                <div class="social-icons">
+                    <a href="https://discord.gg/9UmsTnsNn" target="_blank">
+                        <img src="img/discord.png" alt="Discord">
+                    </a>
+                    <a href="https://www.twitch.tv/darkbiro_" target="_blank">
+                        <img src="img/twitch.png" alt="Twitch">
+                    </a>
+                    <a href="https://youtube.com/@ozzy_nigthfall?si=sAmsmTHWwRB9f7cD" target="_blank">
+                        <img src="img/youtube.png" alt="YouTube">
+                    </a>
+                    <a href="https://chat.whatsapp.com/CtAw8IsUBek0J25d2HxQCO" target="_blank">
+                        <img src="img/whatsapp.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
