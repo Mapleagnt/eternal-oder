@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #020617;
+}
+
+.search-box {
+  text-align: center;
+  margin: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 10px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#animeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
